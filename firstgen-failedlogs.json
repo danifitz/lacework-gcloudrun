@@ -1,0 +1,2517 @@
+[
+  {
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "principalEmail": "daniel.fitzgerald@lacework.net"
+      },
+      "requestMetadata": {
+        "callerIp": "109.148.196.183",
+        "callerSuppliedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36,gzip(gfe),gzip(gfe)",
+        "requestAttributes": {
+          "time": "2022-02-03T12:37:15.505164Z",
+          "auth": {}
+        },
+        "destinationAttributes": {}
+      },
+      "serviceName": "run.googleapis.com",
+      "methodName": "google.cloud.run.v1.Services.CreateService",
+      "authorizationInfo": [
+        {
+          "resource": "namespaces/danf-cloud-run-test/services/gcloudruntest",
+          "permission": "run.services.create",
+          "granted": true,
+          "resourceAttributes": {}
+        }
+      ],
+      "resourceName": "namespaces/danf-cloud-run-test/services/gcloudruntest",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.run.v1.CreateServiceRequest",
+        "parent": "projects/danf-cloud-run-test/regions/us-central1",
+        "service": {
+          "metadata": {
+            "annotations": {
+              "run.googleapis.com/client-name": "cloud-console",
+              "client.knative.dev/user-image": "europe-west2-docker.pkg.dev/danf-cloud-run-test/cloudrun/gcloudruntest@sha256:9673615abfe93fc8da55e8f3f6b9e5ab241d685cdf24424c8169e0d0a696e600",
+              "run.googleapis.com/launch-stage": "ALPHA"
+            },
+            "name": "gcloudruntest",
+            "namespace": "danf-cloud-run-test"
+          },
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "spec": {
+            "template": {
+              "metadata": {
+                "name": "gcloudruntest-00001-dar",
+                "annotations": {
+                  "run.googleapis.com/cpu-throttling": "false",
+                  "run.googleapis.com/execution-environment": "gen1",
+                  "run.googleapis.com/client-name": "cloud-console",
+                  "autoscaling.knative.dev/maxScale": "100"
+                }
+              },
+              "spec": {
+                "serviceAccountName": "379927853725-compute@developer.gserviceaccount.com",
+                "containerConcurrency": 80,
+                "timeoutSeconds": 300
+              }
+            }
+          }
+        }
+      },
+      "response": {
+        "apiVersion": "serving.knative.dev/v1",
+        "@type": "type.googleapis.com/google.cloud.run.v1.Service",
+        "status": {},
+        "kind": "Service",
+        "metadata": {
+          "selfLink": "/apis/serving.knative.dev/v1/namespaces/379927853725/services/gcloudruntest",
+          "name": "gcloudruntest",
+          "labels": {
+            "cloud.googleapis.com/location": "us-central1"
+          },
+          "creationTimestamp": "2022-02-03T12:37:15.457667Z",
+          "generation": 1,
+          "annotations": {
+            "client.knative.dev/user-image": "europe-west2-docker.pkg.dev/danf-cloud-run-test/cloudrun/gcloudruntest@sha256:9673615abfe93fc8da55e8f3f6b9e5ab241d685cdf24424c8169e0d0a696e600",
+            "serving.knative.dev/lastModifier": "daniel.fitzgerald@lacework.net",
+            "run.googleapis.com/ingress": "all",
+            "run.googleapis.com/client-name": "cloud-console",
+            "serving.knative.dev/creator": "daniel.fitzgerald@lacework.net"
+          },
+          "namespace": "379927853725",
+          "resourceVersion": "AAXXHGTm0IM",
+          "uid": "5005447d-7507-4877-99ec-02ece3aa2fb5"
+        },
+        "spec": {
+          "template": {
+            "spec": {
+              "serviceAccountName": "379927853725-compute@developer.gserviceaccount.com",
+              "containerConcurrency": 80,
+              "timeoutSeconds": 300
+            },
+            "metadata": {
+              "name": "gcloudruntest-00001-dar",
+              "annotations": {
+                "run.googleapis.com/cpu-throttling": "false",
+                "run.googleapis.com/execution-environment": "gen1",
+                "autoscaling.knative.dev/maxScale": "100",
+                "run.googleapis.com/client-name": "cloud-console"
+              }
+            }
+          },
+          "traffic": [
+            {
+              "latestRevision": true,
+              "percent": 100
+            }
+          ]
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "us-central1"
+        ]
+      }
+    },
+    "insertId": "1ulbys1d27vu",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "",
+        "location": "us-central1",
+        "configuration_name": "",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:15.386033Z",
+    "severity": "NOTICE",
+    "logName": "projects/danf-cloud-run-test/logs/cloudaudit.googleapis.com%2Factivity",
+    "receiveTimestamp": "2022-02-03T12:37:15.919317272Z"
+  },
+  {
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "status": {
+        "code": 9,
+        "message": "Ready condition status changed to False for Revision gcloudruntest-00001-dar with message: Cloud Run error: Container failed to start. Failed to start and then listen on the port defined by the PORT environment variable. Logs for this revision might contain more information.\n\nLogs URL:\nhttps://console.cloud.google.com/logs/viewer?project=danf-cloud-run-test&resource=cloud_run_revision/service_name/gcloudruntest/revision_name/gcloudruntest-00001-dar&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22gcloudruntest%22%0Aresource.labels.revision_name%3D%22gcloudruntest-00001-dar%22"
+      },
+      "serviceName": "run.googleapis.com",
+      "resourceName": "namespaces/danf-cloud-run-test/revisions/gcloudruntest-00001-dar",
+      "response": {
+        "metadata": {
+          "name": "gcloudruntest-00001-dar",
+          "namespace": "379927853725",
+          "selfLink": "/apis/serving.knative.dev/v1/namespaces/379927853725/revisions/gcloudruntest-00001-dar",
+          "uid": "91c60b0b-7c69-40a9-84ed-b874699f4c26",
+          "resourceVersion": "AAXXHHO7eFQ",
+          "generation": 1,
+          "creationTimestamp": "2022-02-03T12:37:15.770324Z",
+          "labels": {
+            "serving.knative.dev/route": "gcloudruntest",
+            "serving.knative.dev/configuration": "gcloudruntest",
+            "serving.knative.dev/configurationGeneration": "1",
+            "serving.knative.dev/service": "gcloudruntest",
+            "serving.knative.dev/serviceUid": "5005447d-7507-4877-99ec-02ece3aa2fb5",
+            "cloud.googleapis.com/location": "us-central1"
+          },
+          "annotations": {
+            "run.googleapis.com/client-name": "cloud-console",
+            "serving.knative.dev/creator": "daniel.fitzgerald@lacework.net",
+            "run.googleapis.com/execution-environment": "gen1",
+            "autoscaling.knative.dev/maxScale": "100",
+            "run.googleapis.com/cpu-throttling": "false"
+          },
+          "ownerReferences": [
+            {
+              "kind": "Configuration",
+              "name": "gcloudruntest",
+              "uid": "1c21a7ca-c6ce-495b-bf53-b710ebdb26c1",
+              "apiVersion": "serving.knative.dev/v1",
+              "controller": true,
+              "blockOwnerDeletion": true
+            }
+          ]
+        },
+        "apiVersion": "serving.knative.dev/v1",
+        "kind": "Revision",
+        "spec": {
+          "containerConcurrency": 80,
+          "timeoutSeconds": 300,
+          "serviceAccountName": "379927853725-compute@developer.gserviceaccount.com",
+          "containers": [
+            {
+              "image": "europe-west2-docker.pkg.dev/danf-cloud-run-test/cloudrun/gcloudruntest@sha256:9673615abfe93fc8da55e8f3f6b9e5ab241d685cdf24424c8169e0d0a696e600",
+              "ports": [
+                {
+                  "name": "http1",
+                  "containerPort": 8080
+                }
+              ],
+              "resources": {
+                "limits": {
+                  "cpu": "1000m",
+                  "memory": "512Mi"
+                }
+              }
+            }
+          ]
+        },
+        "status": {
+          "observedGeneration": 1,
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "False",
+              "reason": "HealthCheckContainerError",
+              "message": "Cloud Run error: Container failed to start. Failed to start and then listen on the port defined by the PORT environment variable. Logs for this revision might contain more information.\n\nLogs URL:\nhttps://console.cloud.google.com/logs/viewer?project=danf-cloud-run-test&resource=cloud_run_revision/service_name/gcloudruntest/revision_name/gcloudruntest-00001-dar&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22gcloudruntest%22%0Aresource.labels.revision_name%3D%22gcloudruntest-00001-dar%22",
+              "lastTransitionTime": "2022-02-03T12:41:24.275284Z"
+            },
+            {
+              "type": "Active",
+              "status": "True",
+              "lastTransitionTime": "2022-02-03T12:37:21.554455Z",
+              "severity": "Info"
+            },
+            {
+              "type": "ContainerHealthy",
+              "status": "False",
+              "reason": "HealthCheckContainerError",
+              "message": "Cloud Run error: Container failed to start. Failed to start and then listen on the port defined by the PORT environment variable. Logs for this revision might contain more information.\n\nLogs URL:\nhttps://console.cloud.google.com/logs/viewer?project=danf-cloud-run-test&resource=cloud_run_revision/service_name/gcloudruntest/revision_name/gcloudruntest-00001-dar&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22gcloudruntest%22%0Aresource.labels.revision_name%3D%22gcloudruntest-00001-dar%22",
+              "lastTransitionTime": "2022-02-03T12:41:24.275284Z"
+            },
+            {
+              "type": "ResourcesAvailable",
+              "status": "True",
+              "lastTransitionTime": "2022-02-03T12:37:21.201358Z"
+            },
+            {
+              "type": "Retry",
+              "status": "True",
+              "reason": "ImmediateRetry",
+              "message": "System will retry after 0:00:00 from lastTransitionTime for attempt 0.",
+              "lastTransitionTime": "2022-02-03T12:41:24.275284Z",
+              "severity": "Info"
+            }
+          ],
+          "logUrl": "https://console.cloud.google.com/logs/viewer?project=danf-cloud-run-test&resource=cloud_run_revision/service_name/gcloudruntest/revision_name/gcloudruntest-00001-dar&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22gcloudruntest%22%0Aresource.labels.revision_name%3D%22gcloudruntest-00001-dar%22",
+          "imageDigest": "europe-west2-docker.pkg.dev/danf-cloud-run-test/cloudrun/gcloudruntest@sha256:9673615abfe93fc8da55e8f3f6b9e5ab241d685cdf24424c8169e0d0a696e600"
+        },
+        "@type": "type.googleapis.com/google.cloud.run.v1.Revision"
+      }
+    },
+    "insertId": "-3beej5cmfq",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:23.840152Z",
+    "severity": "ERROR",
+    "logName": "projects/danf-cloud-run-test/logs/cloudaudit.googleapis.com%2Fsystem_event",
+    "receiveTimestamp": "2022-02-03T12:41:24.600814473Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:24.908Z\" level=info msg=\"====== [controller] version:5.1.0.6419\" caller=\"main.go:427\" pid=2",
+    "insertId": "61fbcc84000de136011caa2e",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:24.909622Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:24.915925705Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:24.919Z\" level=info msg=\"Invalid netpoll config 600 600, overriding to 60 seconds\" caller=\"config.go:622\" pid=2",
+    "insertId": "61fbcc84000e09a5720661ef",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:24.919973Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:25.246524220Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:24.919Z\" level=info msg=\"cmdlinefilter set: allow=* disallow=\" caller=\"config.go:393\" pid=2",
+    "insertId": "61fbcc84000e0aaeb80372d3",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:24.920238Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:25.246524220Z"
+  },
+  {
+    "textPayload": " * Serving Flask app 'app' (lazy loading)",
+    "insertId": "61fbcc8500074af9f91f36ee",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.477945Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2022-02-03T12:37:25.483445203Z"
+  },
+  {
+    "textPayload": " * Environment: production",
+    "insertId": "61fbcc8500074b17ca2d8e4a",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.477975Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2022-02-03T12:37:25.483445203Z"
+  },
+  {
+    "textPayload": "   WARNING: This is a development server. Do not use it in a production deployment.",
+    "insertId": "61fbcc8500074b203cff6a0e",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.477984Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2022-02-03T12:37:25.483445203Z"
+  },
+  {
+    "textPayload": "   Use a production WSGI server instead.",
+    "insertId": "61fbcc8500074b2849092c2f",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.477992Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2022-02-03T12:37:25.483445203Z"
+  },
+  {
+    "textPayload": " * Debug mode: off",
+    "insertId": "61fbcc8500074b30d772f808",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.478Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2022-02-03T12:37:25.483445203Z"
+  },
+  {
+    "textPayload": " * Running on all addresses.",
+    "insertId": "61fbcc850007755249d394bf",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.488786Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2022-02-03T12:37:25.493555853Z"
+  },
+  {
+    "textPayload": "   WARNING: This is a development server. Do not use it in a production deployment.",
+    "insertId": "61fbcc85000775787dc29622",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.488824Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2022-02-03T12:37:25.493555853Z"
+  },
+  {
+    "textPayload": " * Running on http://169.254.8.1:5000/ (Press CTRL+C to quit)",
+    "insertId": "61fbcc85000775e2de396936",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:25.488930Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2022-02-03T12:37:25.827417142Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.924Z\" level=info msg=\"Launched [(5.1.0.6419) /var/lib/lacework/datacollector -r=collector] -- Pid:11 on 1643891849\" caller=\"controller.go:328\" pid=2",
+    "insertId": "61fbcc89000e1ca0c1f82ead",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.924832Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.956Z\" level=info msg=\"====== [collector] version:5.1.0.6419\" caller=\"main.go:427\" pid=11",
+    "insertId": "61fbcc89000e99825f1c5291",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.956802Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.956Z\" level=info msg=\"ncpu             : 2\" caller=\"main.go:443\" pid=11",
+    "insertId": "61fbcc89000e9a82802fb288",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.957058Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.956Z\" level=info msg=\"max_procs        : 1\" caller=\"main.go:444\" pid=11",
+    "insertId": "61fbcc89000e9b3451344c59",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.957236Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.956Z\" level=info msg=\"Totalram         : 2048 MiB\" caller=\"main.go:453\" pid=11",
+    "insertId": "61fbcc89000e9be86407f42b",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.957416Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.956Z\" level=info msg=\"Totalswap        : 0 MiB\" caller=\"main.go:454\" pid=11",
+    "insertId": "61fbcc89000e9c9c503b973c",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.957596Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.957Z\" level=info msg=\"IsManagedRuntime : false\" caller=\"main.go:455\" pid=11",
+    "insertId": "61fbcc89000e9d5e4f12f1e5",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.957790Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.957Z\" level=info msg=\"DC Mem fraction  : 0.146484375\" caller=\"main.go:484\" pid=11",
+    "insertId": "61fbcc89000e9de84d9465fb",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.957928Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.957Z\" level=info msg=\"oom_score_adj    : -146\" caller=\"main.go:485\" pid=11",
+    "insertId": "61fbcc89000e9e68f658a011",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.958056Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.960Z\" level=info msg=\"Invalid netpoll config 600 600, overriding to 60 seconds\" caller=\"config.go:622\" pid=11",
+    "insertId": "61fbcc89000ea8b3cc5d90f8",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.960691Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.960Z\" level=info msg=\"cmdlinefilter set: allow=* disallow=\" caller=\"config.go:393\" pid=11",
+    "insertId": "61fbcc89000ea99955b9e618",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.960921Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:29.967Z\" level=info msg=\"Setting owner group to 4\" caller=\"state.go:129\" pid=11",
+    "insertId": "61fbcc89000ec534c55ba294",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:29.967988Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.243957977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.418Z\" level=info msg=\"Setting transport (Refresh), Name:Go Daddy Secure Certificate Authority - G2, SN:67bc30735da351c5\" caller=\"transport.go:71\" pid=11",
+    "insertId": "61fbcc8a0006657faa11cb2e",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.419199Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.456Z\" level=info msg=\"flushed old DB[/var/lib/lacework/collector/5.1.0.6419/Db/] reason: mguid change\" caller=\"localdb.go:43\" pid=11",
+    "insertId": "61fbcc8a0006f720519bb05b",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.456480Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.457Z\" level=info msg=\"Initializing strm 0, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=11",
+    "insertId": "61fbcc8a0006fc134726b6a0",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.457747Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.459Z\" level=info msg=\"Initializing strm 1, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=11",
+    "insertId": "61fbcc8a00070246b753286f",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.459334Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.459Z\" level=info msg=\"Initializing strm 2, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=11",
+    "insertId": "61fbcc8a0007035768ce1f09",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.459607Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.459Z\" level=info msg=\"HostPkgCtrlr Success\" caller=\"pkgctrlr.go:41\" pid=11",
+    "insertId": "61fbcc8a0007040d1f3aa73d",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.459789Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.461Z\" level=info msg=\"GetNetlinkRequest: Allocating netlinkTempBuffer, len 0, cap 0\" caller=\"routehelper.go:193\" pid=11",
+    "insertId": "61fbcc8a00070c00c31829b2",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.461824Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.463Z\" level=info msg=\"IpLocalInfo initialized\" caller=\"iplocal.go:111\" pid=11",
+    "insertId": "61fbcc8a000712f028590731",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.463600Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.464Z\" level=info msg=\"Found [] containerd unix sockets to try\" caller=\"containerd.go:207\" pid=11",
+    "insertId": "61fbcc8a0007189b0d14d61c",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.465051Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.464Z\" level=info msg=\"Using docker socket endpoint , usedockertop false\" caller=\"container.go:556\" pid=11",
+    "insertId": "61fbcc8a0007196732f36d6d",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.465255Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.466Z\" level=warning msg=\"Cannot find host mount namespace id, err readlink /proc/1/ns/mnt no such file or directory\" caller=\"pte.go:443\" pid=11",
+    "insertId": "61fbcc8a00071d80921e7435",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.466304Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.466Z\" level=info msg=\"eBPF based attribution DISABLED, init err readlink /proc/1/ns/mnt no such file or directory\" caller=\"pte.go:304\" pid=11",
+    "insertId": "61fbcc8a00071f1d6048113f",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.466717Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.470Z\" level=info msg=\"Socket bind failure permission denied\" caller=\"routehelper.go:155\" pid=11",
+    "insertId": "61fbcc8a000730ae1667df11",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.471214Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.471Z\" level=warning msg=\"Invalid recvfrom bad file descriptor\" caller=\"routehelper.go:468\" pid=11",
+    "insertId": "61fbcc8a000731896832ba66",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.471433Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.474Z\" level=info msg=\"Container map cb registered\" caller=\"iplocal.go:125\" pid=11",
+    "insertId": "61fbcc8a00073e04151e1aeb",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.474628Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.475Z\" level=info msg=\"fanotify init\" caller=\"fanotify.go:389\" pid=11",
+    "insertId": "61fbcc8a0007422841254fad",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.475688Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.475Z\" level=info msg=\"Kernel: 4.4.0, FAN_MOUNT_FILESYSTEM: false, FAN_REPORT_FID: false\" caller=\"fanotify.go:384\" pid=11",
+    "insertId": "61fbcc8a000742d91e9bddc8",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.475865Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.485Z\" level=warning msg=\"Unexpected child death (0: 5.1.0.6419)..\" caller=\"controller.go:435\" pid=2",
+    "insertId": "61fbcc8a00076b2f218e42ca",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.486191Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:30.486Z\" level=info msg=\"Child errored unexpected &os.ProcessState{pid:11, status:0x200, rusage:(*syscall.Rusage)(0xc0001e61b0)} exit status 2->2\" caller=\"controller.go:538\" pid=2",
+    "insertId": "61fbcc8a00076c0fc6d0dfe6",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:30.486415Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:30.577575977Z"
+  },
+  {
+    "textPayload": "panic: runtime error: slice bounds out of range [-1:]\n\ngoroutine 47 [running]:\ngithub.com/lacework/agent/utils.GetLine(0xc00081c140, 0x121, 0x1727a04, 0x4, 0x121, 0xc00081c140)\n\tgithub.com/lacework/agent/utils/misc.go:346 +0x138\ngithub.com/lacework/agent/utils.GetLineFields(0xc00081c140, 0x121, 0x1727a04, 0x4, 0x121, 0x0, 0x0)\n\tgithub.com/lacework/agent/utils/misc.go:351 +0x49\ngithub.com/lacework/agent/datacollector/netstat/process.(*Proc).readProcStatus(0xc0003f5900, 0xc000023118, 0x7, 0xc00052a600, 0x1727101, 0x3, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:107 +0xe5\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).readProcData(0xc000519440, 0x3, 0xc000023201, 0x61fbcc89, 0x1552100, 0xc00035dad0, 0xc000023280, 0x2a46040)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:446 +0x1de\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).Refresh(0xc000519440, 0x1533240, 0x249cdb8, 0x0, 0x0, 0x1, 0x61fbcc89, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:647 +0x47a\ngithub.com/lacework/agent/datacollector/netstat/datamap.(*Datamap).NewItem(0xc000519440, 0x1533240, 0x249cdb8, 0x61fbcc89, 0xc000023401, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/datamap/datamap.go:219 +0x1c2\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).GetTicksForPid(0xc000519440, 0x3, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:722 +0x17e\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).shouldReplacePid(0xc00073ec80, 0x3, 0xc0000c8450, 0x18, 0x61fbcc89, 0x0, 0x2, 0x0, 0x1000, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:493 +0x5c\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkPidFds(0xc00073ec80, 0x2, 0x1, 0x2a46001, 0x0, 0x0, 0x0, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:432 +0x4df\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkProcesses(0xc00073ec80, 0x0, 0xffffffffffffffff, 0x1, 0xc000023978, 0x448d01, 0x0, 0x300000000, 0xc000498a00, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:364 +0x345\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).searchInternal(0xc00073ec80, 0x0, 0x1, 0x0, 0x61fbcc89, 0x17e0001, 0xffffffffffffffff, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:263 +0x3f1\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).Search(0xc00073ec80, 0x0, 0x1, 0xffffffffff000100, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x19bfd00)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:205 +0x19e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).inodeToPid(0xc000438200, 0x0, 0x1, 0x0, 0x100, 0x0, 0xc000073c68, 0x1152a50, 0xc000519560)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:403 +0x17f\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).netstatNewEntries(0xc000438200, 0xc0000d0a40, 0x1, 0x1, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:313 +0x23e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).Ticker(0xc000438200, 0x17ee501)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:113 +0xe5\ngithub.com/lacework/agent/datacollector/netstat.(*OSMapsInternal).startMon(0xc0007ea000)\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:307 +0x217\ncreated by github.com/lacework/agent/datacollector/netstat.InitOSMaps\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:138 +0x7c5",
+    "insertId": "61fbcc8b0008be400d597b34",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:31.572992Z",
+    "severity": "ERROR",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2022-02-03T12:37:31.821856162Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.487Z\" level=info msg=\"Launched [(5.1.0.6419) /var/lib/lacework/datacollector -r=collector] -- Pid:18 on 1643891852\" caller=\"controller.go:328\" pid=2",
+    "insertId": "61fbcc8c000771c246ec6c02",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.487874Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.519Z\" level=info msg=\"====== [collector] version:5.1.0.6419\" caller=\"main.go:427\" pid=18",
+    "insertId": "61fbcc8c0007f01539df7534",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.520213Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.519Z\" level=info msg=\"ncpu             : 2\" caller=\"main.go:443\" pid=18",
+    "insertId": "61fbcc8c0007f1381f311b51",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.520504Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.519Z\" level=info msg=\"max_procs        : 1\" caller=\"main.go:444\" pid=18",
+    "insertId": "61fbcc8c0007f211ea9eea22",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.520721Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.520Z\" level=info msg=\"Totalram         : 2048 MiB\" caller=\"main.go:453\" pid=18",
+    "insertId": "61fbcc8c0007f2c1ec6f2ed3",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.520897Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.520Z\" level=info msg=\"Totalswap        : 0 MiB\" caller=\"main.go:454\" pid=18",
+    "insertId": "61fbcc8c0007f36ee62d1b12",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.521070Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.520Z\" level=info msg=\"IsManagedRuntime : false\" caller=\"main.go:455\" pid=18",
+    "insertId": "61fbcc8c0007f400bdd8ee35",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.521216Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.520Z\" level=info msg=\"DC Mem fraction  : 0.146484375\" caller=\"main.go:484\" pid=18",
+    "insertId": "61fbcc8c0007f49168eca338",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.521361Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.520Z\" level=info msg=\"oom_score_adj    : -146\" caller=\"main.go:485\" pid=18",
+    "insertId": "61fbcc8c0007f5219e455bce",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.521505Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.523Z\" level=info msg=\"Invalid netpoll config 600 600, overriding to 60 seconds\" caller=\"config.go:622\" pid=18",
+    "insertId": "61fbcc8c0007fc0b97ae3f3f",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.523275Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.523Z\" level=info msg=\"cmdlinefilter set: allow=* disallow=\" caller=\"config.go:393\" pid=18",
+    "insertId": "61fbcc8c0007fca702b81ce9",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.523431Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.528Z\" level=info msg=\"Setting owner group to 4\" caller=\"state.go:129\" pid=18",
+    "insertId": "61fbcc8c00080f9f4d1b7c6e",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.528287Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:32.574363458Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.902Z\" level=info msg=\"Setting transport (Refresh), Name:Go Daddy Secure Certificate Authority - G2, SN:67bc30735da351c5\" caller=\"transport.go:71\" pid=18",
+    "insertId": "61fbcc8c000dc6618bf10f1d",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.902753Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.903Z\" level=info msg=\"Initializing strm 0, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=18",
+    "insertId": "61fbcc8c000dcae282f9cd87",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.903906Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.913Z\" level=info msg=\"Initializing strm 1, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=18",
+    "insertId": "61fbcc8c000df06569efe13f",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.913509Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.913Z\" level=info msg=\"Initializing strm 2, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=18",
+    "insertId": "61fbcc8c000df150dc230d37",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.913744Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.913Z\" level=info msg=\"HostPkgCtrlr Success\" caller=\"pkgctrlr.go:41\" pid=18",
+    "insertId": "61fbcc8c000df20a8ff53955",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.913930Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.915Z\" level=info msg=\"GetNetlinkRequest: Allocating netlinkTempBuffer, len 0, cap 0\" caller=\"routehelper.go:193\" pid=18",
+    "insertId": "61fbcc8c000df77e9fa319b9",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.915326Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.916Z\" level=info msg=\"IpLocalInfo initialized\" caller=\"iplocal.go:111\" pid=18",
+    "insertId": "61fbcc8c000dfe5f4af032c3",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.917087Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.918Z\" level=info msg=\"Found [] containerd unix sockets to try\" caller=\"containerd.go:207\" pid=18",
+    "insertId": "61fbcc8c000e031fb31285c6",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.918303Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.918Z\" level=info msg=\"Using docker socket endpoint , usedockertop false\" caller=\"container.go:556\" pid=18",
+    "insertId": "61fbcc8c000e03d65cd454fe",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.918486Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.918Z\" level=warning msg=\"Cannot find host mount namespace id, err readlink /proc/1/ns/mnt no such file or directory\" caller=\"pte.go:443\" pid=18",
+    "insertId": "61fbcc8c000e054831ede4be",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.918856Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.918Z\" level=info msg=\"eBPF based attribution DISABLED, init err readlink /proc/1/ns/mnt no such file or directory\" caller=\"pte.go:304\" pid=18",
+    "insertId": "61fbcc8c000e05d40b9090a3",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.918996Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.919Z\" level=info msg=\"Container map cb registered\" caller=\"iplocal.go:125\" pid=18",
+    "insertId": "61fbcc8c000e0a8af8c89daf",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.920202Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.920Z\" level=info msg=\"fanotify init\" caller=\"fanotify.go:389\" pid=18",
+    "insertId": "61fbcc8c000e0b1c3706b4ef",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.920348Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.920Z\" level=info msg=\"Kernel: 4.4.0, FAN_MOUNT_FILESYSTEM: false, FAN_REPORT_FID: false\" caller=\"fanotify.go:384\" pid=18",
+    "insertId": "61fbcc8c000e0bfa3c7c00b6",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.920570Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.931Z\" level=warning msg=\"Unexpected child death (0: 5.1.0.6419)..\" caller=\"controller.go:435\" pid=2",
+    "insertId": "61fbcc8c000e37e677c25379",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.931814Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:32.931Z\" level=info msg=\"Child errored unexpected &os.ProcessState{pid:18, status:0x200, rusage:(*syscall.Rusage)(0xc0000be360)} exit status 2->2\" caller=\"controller.go:538\" pid=2",
+    "insertId": "61fbcc8c000e38da6ad8b808",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:32.932058Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:33.240773451Z"
+  },
+  {
+    "textPayload": "panic: runtime error: slice bounds out of range [-1:]\n\ngoroutine 40 [running]:\ngithub.com/lacework/agent/utils.GetLine(0xc000846280, 0x121, 0x1727a04, 0x4, 0x121, 0xc000846280)\n\tgithub.com/lacework/agent/utils/misc.go:346 +0x138\ngithub.com/lacework/agent/utils.GetLineFields(0xc000846280, 0x121, 0x1727a04, 0x4, 0x121, 0x0, 0x0)\n\tgithub.com/lacework/agent/utils/misc.go:351 +0x49\ngithub.com/lacework/agent/datacollector/netstat/process.(*Proc).readProcStatus(0xc0003f3680, 0xc0002e5118, 0x7, 0xc00050a600, 0x1727101, 0x3, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:107 +0xe5\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).readProcData(0xc0005c0000, 0x3, 0xc0002e5201, 0x61fbcc8c, 0x1552100, 0xc000865a70, 0xc0002e5280, 0x2a46040)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:446 +0x1de\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).Refresh(0xc0005c0000, 0x1533240, 0x249cdb8, 0x0, 0x0, 0x1, 0x61fbcc8c, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:647 +0x47a\ngithub.com/lacework/agent/datacollector/netstat/datamap.(*Datamap).NewItem(0xc0005c0000, 0x1533240, 0x249cdb8, 0x61fbcc8c, 0xc0002e5401, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/datamap/datamap.go:219 +0x1c2\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).GetTicksForPid(0xc0005c0000, 0x3, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:722 +0x17e\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).shouldReplacePid(0xc000763080, 0x3, 0xc0007c5d40, 0x18, 0x61fbcc8c, 0x0, 0x2, 0x0, 0x1000, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:493 +0x5c\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkPidFds(0xc000763080, 0x2, 0x1, 0x2a46001, 0x0, 0x0, 0x0, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:432 +0x4df\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkProcesses(0xc000763080, 0x0, 0xffffffffffffffff, 0x1, 0xc0002e5978, 0x448d01, 0x0, 0x300000000, 0xc000498d00, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:364 +0x345\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).searchInternal(0xc000763080, 0x0, 0x1, 0x0, 0x61fbcc8c, 0x17e0001, 0xffffffffffffffff, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:263 +0x3f1\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).Search(0xc000763080, 0x0, 0x1, 0xffffffffff000100, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x19bfd00)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:205 +0x19e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).inodeToPid(0xc000436200, 0x0, 0x1, 0x0, 0x100, 0x0, 0xc00006ec68, 0x1152a50, 0xc0005c0360)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:403 +0x17f\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).netstatNewEntries(0xc000436200, 0xc0000d0978, 0x1, 0x1, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:313 +0x23e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).Ticker(0xc000436200, 0x17ee501)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:113 +0xe5\ngithub.com/lacework/agent/datacollector/netstat.(*OSMapsInternal).startMon(0xc00081a000)\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:307 +0x217\ncreated by github.com/lacework/agent/datacollector/netstat.InitOSMaps\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:138 +0x7c5",
+    "insertId": "61fbcc8d000ede5d1e9e5d85",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:33.974429Z",
+    "severity": "ERROR",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2022-02-03T12:37:34.154818060Z"
+  },
+  {
+    "insertId": "6221905893266582969",
+    "jsonPayload": {
+      "exceptionInfo": {
+        "type": "runtime error",
+        "message": "slice bounds out of range [-1:]"
+      },
+      "@type": "type.googleapis.com/google.devtools.clouderrorreporting.v1beta1.Insight",
+      "errorEvent": {
+        "eventTime": "2022-02-03T12:37:31.572992Z",
+        "message": "panic: runtime error: slice bounds out of range [-1:]\n\ngoroutine 47 [running]:\ngithub.com/lacework/agent/utils.GetLine(0xc00081c140, 0x121, 0x1727a04, 0x4, 0x121, 0xc00081c140)\n\tgithub.com/lacework/agent/utils/misc.go:346 +0x138\ngithub.com/lacework/agent/utils.GetLineFields(0xc00081c140, 0x121, 0x1727a04, 0x4, 0x121, 0x0, 0x0)\n\tgithub.com/lacework/agent/utils/misc.go:351 +0x49\ngithub.com/lacework/agent/datacollector/netstat/process.(*Proc).readProcStatus(0xc0003f5900, 0xc000023118, 0x7, 0xc00052a600, 0x1727101, 0x3, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:107 +0xe5\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).readProcData(0xc000519440, 0x3, 0xc000023201, 0x61fbcc89, 0x1552100, 0xc00035dad0, 0xc000023280, 0x2a46040)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:446 +0x1de\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).Refresh(0xc000519440, 0x1533240, 0x249cdb8, 0x0, 0x0, 0x1, 0x61fbcc89, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:647 +0x47a\ngithub.com/lacework/agent/datacollector/netstat/datamap.(*Datamap).NewItem(0xc000519440, 0x1533240, 0x249cdb8, 0x61fbcc89, 0xc000023401, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/datamap/datamap.go:219 +0x1c2\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).GetTicksForPid(0xc000519440, 0x3, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:722 +0x17e\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).shouldReplacePid(0xc00073ec80, 0x3, 0xc0000c8450, 0x18, 0x61fbcc89, 0x0, 0x2, 0x0, 0x1000, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:493 +0x5c\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkPidFds(0xc00073ec80, 0x2, 0x1, 0x2a46001, 0x0, 0x0, 0x0, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:432 +0x4df\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkProcesses(0xc00073ec80, 0x0, 0xffffffffffffffff, 0x1, 0xc000023978, 0x448d01, 0x0, 0x300000000, 0xc000498a00, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:364 +0x345\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).searchInternal(0xc00073ec80, 0x0, 0x1, 0x0, 0x61fbcc89, 0x17e0001, 0xffffffffffffffff, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:263 +0x3f1\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).Search(0xc00073ec80, 0x0, 0x1, 0xffffffffff000100, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x19bfd00)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:205 +0x19e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).inodeToPid(0xc000438200, 0x0, 0x1, 0x0, 0x100, 0x0, 0xc000073c68, 0x1152a50, 0xc000519560)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:403 +0x17f\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).netstatNewEntries(0xc000438200, 0xc0000d0a40, 0x1, 0x1, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:313 +0x23e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).Ticker(0xc000438200, 0x17ee501)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:113 +0xe5\ngithub.com/lacework/agent/datacollector/netstat.(*OSMapsInternal).startMon(0xc0007ea000)\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:307 +0x217\ncreated by github.com/lacework/agent/datacollector/netstat.InitOSMaps\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:138 +0x7c5",
+        "serviceContext": {
+          "resourceType": "cloud_run_revision",
+          "version": "gcloudruntest-00001-dar",
+          "service": "gcloudruntest"
+        }
+      },
+      "errorGroup": "projects/danf-cloud-run-test/groups/CPCIr87nneiQlgE",
+      "message": "Error detected in gcloudruntest version gcloudruntest-00001-dar"
+    },
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:34.801245870Z",
+    "severity": "NOTICE",
+    "labels": {
+      "notificationType": "New",
+      "logMessage": "panic: runtime error: slice bounds out of range [-1:]\n\ngoroutine 47 [running]:\ngithub.com/lacework/agent/utils.GetLine(0xc00081c140, 0x121, 0x1727a04, 0x4, 0x121, 0xc00081c140)\n\tgithub.com/lacework/agent/utils/misc.go:346 +0x138\ngithub.com/lacework/agent/utils.GetLineFields(0xc00081c140, 0x121, 0x1727a04, 0x4, 0x121, 0x0, 0x0)\n\tgithub.com/lacework/agent/utils/misc.go:351 +0x49\ngithub.com/lacework/agent/datacollector/netstat/process.(*Proc).readProcStatus(0xc0003f5900, 0xc000023118, 0x7, 0xc00052a600, 0x1...",
+      "deploymentVersion": "gcloudruntest-00001-dar",
+      "causeLineNumber": "346",
+      "exceptionMessage": "slice bounds out of range [-1:]",
+      "clouderrorreporting.googleapis.com/notification_trigger_error_ingestion_time": "2022-02-03T12:37:31.821856162+00:00",
+      "deploymentAppId": "gcloudruntest",
+      "causeFullFilePath": "github.com/lacework/agent/utils/misc.go",
+      "exceptionType": "runtime error",
+      "causeFullyQualifiedFunction": "GetLine",
+      "errorGroupId": "CPCIr87nneiQlgE",
+      "activity_type_name": "CrashReportingErrorGroupNew"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/clouderrorreporting.googleapis.com%2Finsights",
+    "receiveTimestamp": "2022-02-03T12:37:34.801245870Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.933Z\" level=info msg=\"Launched [(5.1.0.6419) /var/lib/lacework/datacollector -r=collector] -- Pid:26 on 1643891856\" caller=\"controller.go:328\" pid=2",
+    "insertId": "61fbcc90000e3e6a55b9ae4b",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.933482Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.966Z\" level=info msg=\"====== [collector] version:5.1.0.6419\" caller=\"main.go:427\" pid=26",
+    "insertId": "61fbcc90000ec1f0dff78ecf",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.967152Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.966Z\" level=info msg=\"ncpu             : 2\" caller=\"main.go:443\" pid=26",
+    "insertId": "61fbcc90000ec325a8b99557",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.967461Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.967Z\" level=info msg=\"max_procs        : 1\" caller=\"main.go:444\" pid=26",
+    "insertId": "61fbcc90000ec3f33dc6cbfe",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.967667Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.967Z\" level=info msg=\"Totalram         : 2048 MiB\" caller=\"main.go:453\" pid=26",
+    "insertId": "61fbcc90000ec4941903b9cf",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.967828Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.967Z\" level=info msg=\"Totalswap        : 0 MiB\" caller=\"main.go:454\" pid=26",
+    "insertId": "61fbcc90000ec566be71804c",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.968038Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.967Z\" level=info msg=\"IsManagedRuntime : false\" caller=\"main.go:455\" pid=26",
+    "insertId": "61fbcc90000ec627fee93a53",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.968231Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.967Z\" level=info msg=\"DC Mem fraction  : 0.146484375\" caller=\"main.go:484\" pid=26",
+    "insertId": "61fbcc90000ec6e46c21151f",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.968420Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.968Z\" level=info msg=\"oom_score_adj    : -146\" caller=\"main.go:485\" pid=26",
+    "insertId": "61fbcc90000ec7b328abeca0",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.968627Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.970Z\" level=info msg=\"Invalid netpoll config 600 600, overriding to 60 seconds\" caller=\"config.go:622\" pid=26",
+    "insertId": "61fbcc90000ed0f4f7c286ac",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.970996Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.971Z\" level=info msg=\"cmdlinefilter set: allow=* disallow=\" caller=\"config.go:393\" pid=26",
+    "insertId": "61fbcc90000ed1efeb29432e",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.971247Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:36.974Z\" level=info msg=\"Setting owner group to 4\" caller=\"state.go:129\" pid=26",
+    "insertId": "61fbcc90000edfba165f50d6",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:36.974778Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.238326504Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.354Z\" level=info msg=\"Setting transport (Refresh), Name:Go Daddy Secure Certificate Authority - G2, SN:67bc30735da351c5\" caller=\"transport.go:71\" pid=26",
+    "insertId": "61fbcc9100056a9e3830bdc8",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.354974Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.356Z\" level=info msg=\"Initializing strm 0, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=26",
+    "insertId": "61fbcc9100056fd8eee74a34",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.356312Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.365Z\" level=info msg=\"Initializing strm 1, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=26",
+    "insertId": "61fbcc91000595ff8bbbcce3",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.366079Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.366Z\" level=info msg=\"Initializing strm 2, dir = /var/lib/lacework/collector/5.1.0.6419/Db/\" caller=\"localdb.go:50\" pid=26",
+    "insertId": "61fbcc910005972519cbbdfb",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.366373Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.366Z\" level=info msg=\"HostPkgCtrlr Success\" caller=\"pkgctrlr.go:41\" pid=26",
+    "insertId": "61fbcc91000598a159d451b1",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.366753Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.367Z\" level=info msg=\"GetNetlinkRequest: Allocating netlinkTempBuffer, len 0, cap 0\" caller=\"routehelper.go:193\" pid=26",
+    "insertId": "61fbcc9100059d228771432e",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.367906Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.369Z\" level=info msg=\"IpLocalInfo initialized\" caller=\"iplocal.go:111\" pid=26",
+    "insertId": "61fbcc910005a415137d3e75",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.369685Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.370Z\" level=info msg=\"Found [] containerd unix sockets to try\" caller=\"containerd.go:207\" pid=26",
+    "insertId": "61fbcc910005a911b8908167",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.370961Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.370Z\" level=info msg=\"Using docker socket endpoint , usedockertop false\" caller=\"container.go:556\" pid=26",
+    "insertId": "61fbcc910005a9bdad4e7137",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.371133Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.371Z\" level=warning msg=\"Cannot find host mount namespace id, err readlink /proc/1/ns/mnt no such file or directory\" caller=\"pte.go:443\" pid=26",
+    "insertId": "61fbcc910005ad0516e8b066",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.371973Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.371Z\" level=info msg=\"eBPF based attribution DISABLED, init err readlink /proc/1/ns/mnt no such file or directory\" caller=\"pte.go:304\" pid=26",
+    "insertId": "61fbcc910005adb00e670a4c",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.372144Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.373Z\" level=info msg=\"Container map cb registered\" caller=\"iplocal.go:125\" pid=26",
+    "insertId": "61fbcc910005b2e69d0b5793",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "location": "us-central1",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.373478Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.373Z\" level=info msg=\"fanotify init\" caller=\"fanotify.go:389\" pid=26",
+    "insertId": "61fbcc910005b3dbdd22e5a2",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "service_name": "gcloudruntest",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.373723Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.373Z\" level=info msg=\"Kernel: 4.4.0, FAN_MOUNT_FILESYSTEM: false, FAN_REPORT_FID: false\" caller=\"fanotify.go:384\" pid=26",
+    "insertId": "61fbcc910005b470c55bab7d",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest",
+        "service_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.373872Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.387Z\" level=warning msg=\"Unexpected child death (0: 5.1.0.6419)..\" caller=\"controller.go:435\" pid=2",
+    "insertId": "61fbcc910005ea8fe036c5ba",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.387727Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.387Z\" level=info msg=\"Child errored unexpected &os.ProcessState{pid:26, status:0x200, rusage:(*syscall.Rusage)(0xc0001e6240)} exit status 2->2\" caller=\"controller.go:538\" pid=2",
+    "insertId": "61fbcc910005eb6269e8cc3d",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.387938Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:37.387Z\" level=info msg=\"Cannot find a lkg version /var/lib/lacework/lkg/datacollector\" caller=\"controller.go:768\" pid=2",
+    "insertId": "61fbcc910005ec2a999c7241",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:37.388138Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:37.572041676Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:38.387Z\" level=info msg=shutdown caller=\"controller.go:397\" pid=2",
+    "insertId": "61fbcc920005ec85b04b3f4f",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "project_id": "danf-cloud-run-test",
+        "revision_name": "gcloudruntest-00001-dar",
+        "service_name": "gcloudruntest",
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:38.388229Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:38.569053663Z"
+  },
+  {
+    "textPayload": "time=\"2022-02-03T12:37:38.388Z\" level=info msg=\"Normal Exit of .....\" caller=\"main.go:282\" pid=2",
+    "insertId": "61fbcc920005edd8674c0bc8",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "configuration_name": "gcloudruntest",
+        "location": "us-central1",
+        "revision_name": "gcloudruntest-00001-dar",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:38.388568Z",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2F%2Fvar%2Flog%2Flacework%2Fdatacollector.log",
+    "receiveTimestamp": "2022-02-03T12:37:38.569053663Z"
+  },
+  {
+    "textPayload": "panic: runtime error: slice bounds out of range [-1:]\n\ngoroutine 39 [running]:\ngithub.com/lacework/agent/utils.GetLine(0xc000852140, 0x121, 0x1727a04, 0x4, 0x121, 0xc000852140)\n\tgithub.com/lacework/agent/utils/misc.go:346 +0x138\ngithub.com/lacework/agent/utils.GetLineFields(0xc000852140, 0x121, 0x1727a04, 0x4, 0x121, 0x0, 0x0)\n\tgithub.com/lacework/agent/utils/misc.go:351 +0x49\ngithub.com/lacework/agent/datacollector/netstat/process.(*Proc).readProcStatus(0xc0003f5680, 0xc000279118, 0x7, 0xc00050a600, 0x1727101, 0x3, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:107 +0xe5\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).readProcData(0xc000245b00, 0x3, 0xc000279201, 0x61fbcc90, 0x1552100, 0xc000867a70, 0xc000279280, 0x2a46040)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:446 +0x1de\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).Refresh(0xc000245b00, 0x1533240, 0x249cdb8, 0x0, 0x0, 0x1, 0x61fbcc90, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:647 +0x47a\ngithub.com/lacework/agent/datacollector/netstat/datamap.(*Datamap).NewItem(0xc000245b00, 0x1533240, 0x249cdb8, 0x61fbcc90, 0xc000279401, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/datamap/datamap.go:219 +0x1c2\ngithub.com/lacework/agent/datacollector/netstat/process.(*ProcMap).GetTicksForPid(0xc000245b00, 0x3, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/process/procs.go:722 +0x17e\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).shouldReplacePid(0xc000767180, 0x3, 0xc0007c9d40, 0x18, 0x61fbcc90, 0x0, 0x2, 0x0, 0x1000, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:493 +0x5c\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkPidFds(0xc000767180, 0x2, 0x1, 0x2a46001, 0x0, 0x0, 0x0, 0x0, 0x0)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:432 +0x4df\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).checkProcesses(0xc000767180, 0x0, 0xffffffffffffffff, 0x1, 0xc000279978, 0x448d01, 0x0, 0x300000000, 0xc000030a00, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:364 +0x345\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).searchInternal(0xc000767180, 0x0, 0x1, 0x0, 0x61fbcc90, 0x3e4353e40001, 0xffffffffffffffff, 0x0, 0x0, 0x0, ...)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:263 +0x3f1\ngithub.com/lacework/agent/datacollector/netstat/inodemap.(*InodeMap).Search(0xc000767180, 0x0, 0x1, 0xffffffffff000100, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x19bfd00)\n\tgithub.com/lacework/agent/datacollector/netstat/inodemap/inodemap.go:205 +0x19e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).inodeToPid(0xc000438200, 0x0, 0x1, 0x0, 0x100, 0x0, 0xc00006ec68, 0x1152a50, 0xc000245c20)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:403 +0x17f\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).netstatNewEntries(0xc000438200, 0xc0000c2988, 0x1, 0x1, 0x1)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:313 +0x23e\ngithub.com/lacework/agent/datacollector/netstat.(*netStat).Ticker(0xc000438200, 0x17ee501)\n\tgithub.com/lacework/agent/datacollector/netstat/netstat.go:113 +0xe5\ngithub.com/lacework/agent/datacollector/netstat.(*OSMapsInternal).startMon(0xc00017e000)\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:307 +0x217\ncreated by github.com/lacework/agent/datacollector/netstat.InitOSMaps\n\tgithub.com/lacework/agent/datacollector/netstat/monitor.go:138 +0x7c5",
+    "insertId": "61fbcc9200074884014b22eb",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test",
+        "service_name": "gcloudruntest",
+        "revision_name": "gcloudruntest-00001-dar",
+        "configuration_name": "gcloudruntest"
+      }
+    },
+    "timestamp": "2022-02-03T12:37:38.477316Z",
+    "severity": "ERROR",
+    "labels": {
+      "instanceId": "00bf4bf02d7693dfeef296419a5554e765ea312f926fe3df7a7924f758b62f8eaf353d5f10e300a7601caea604c1453e59bd81a34b426aecdaaa4097bc"
+    },
+    "logName": "projects/danf-cloud-run-test/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2022-02-03T12:37:38.814495061Z"
+  },
+  {
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "status": {
+        "code": 9,
+        "message": "Ready condition status changed to False for Service gcloudruntest with message: Cloud Run error: Container failed to start. Failed to start and then listen on the port defined by the PORT environment variable. Logs for this revision might contain more information.\n\nLogs URL:\nhttps://console.cloud.google.com/logs/viewer?project=danf-cloud-run-test&resource=cloud_run_revision/service_name/gcloudruntest/revision_name/gcloudruntest-00001-dar&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22gcloudruntest%22%0Aresource.labels.revision_name%3D%22gcloudruntest-00001-dar%22"
+      },
+      "serviceName": "run.googleapis.com",
+      "resourceName": "namespaces/danf-cloud-run-test/services/gcloudruntest",
+      "response": {
+        "metadata": {
+          "name": "gcloudruntest",
+          "namespace": "379927853725",
+          "selfLink": "/apis/serving.knative.dev/v1/namespaces/379927853725/services/gcloudruntest",
+          "uid": "5005447d-7507-4877-99ec-02ece3aa2fb5",
+          "resourceVersion": "AAXXHHO9DD8",
+          "generation": 1,
+          "creationTimestamp": "2022-02-03T12:37:15.457667Z",
+          "labels": {
+            "cloud.googleapis.com/location": "us-central1"
+          },
+          "annotations": {
+            "run.googleapis.com/client-name": "cloud-console",
+            "serving.knative.dev/creator": "daniel.fitzgerald@lacework.net",
+            "serving.knative.dev/lastModifier": "daniel.fitzgerald@lacework.net",
+            "client.knative.dev/user-image": "europe-west2-docker.pkg.dev/danf-cloud-run-test/cloudrun/gcloudruntest@sha256:9673615abfe93fc8da55e8f3f6b9e5ab241d685cdf24424c8169e0d0a696e600",
+            "run.googleapis.com/ingress": "all"
+          }
+        },
+        "apiVersion": "serving.knative.dev/v1",
+        "kind": "Service",
+        "spec": {
+          "template": {
+            "metadata": {
+              "name": "gcloudruntest-00001-dar",
+              "annotations": {
+                "run.googleapis.com/client-name": "cloud-console",
+                "run.googleapis.com/execution-environment": "gen1",
+                "autoscaling.knative.dev/maxScale": "100",
+                "run.googleapis.com/cpu-throttling": "false"
+              }
+            },
+            "spec": {
+              "containerConcurrency": 80,
+              "timeoutSeconds": 300,
+              "serviceAccountName": "379927853725-compute@developer.gserviceaccount.com",
+              "containers": [
+                {
+                  "image": "europe-west2-docker.pkg.dev/danf-cloud-run-test/cloudrun/gcloudruntest@sha256:9673615abfe93fc8da55e8f3f6b9e5ab241d685cdf24424c8169e0d0a696e600",
+                  "ports": [
+                    {
+                      "name": "http1",
+                      "containerPort": 8080
+                    }
+                  ],
+                  "resources": {
+                    "limits": {
+                      "cpu": "1000m",
+                      "memory": "512Mi"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "traffic": [
+            {
+              "percent": 100,
+              "latestRevision": true
+            }
+          ]
+        },
+        "status": {
+          "observedGeneration": 1,
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "False",
+              "reason": "HealthCheckContainerError",
+              "message": "Cloud Run error: Container failed to start. Failed to start and then listen on the port defined by the PORT environment variable. Logs for this revision might contain more information.\n\nLogs URL:\nhttps://console.cloud.google.com/logs/viewer?project=danf-cloud-run-test&resource=cloud_run_revision/service_name/gcloudruntest/revision_name/gcloudruntest-00001-dar&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22gcloudruntest%22%0Aresource.labels.revision_name%3D%22gcloudruntest-00001-dar%22",
+              "lastTransitionTime": "2022-02-03T12:41:24.378687Z"
+            },
+            {
+              "type": "ConfigurationsReady",
+              "status": "False",
+              "reason": "HealthCheckContainerError",
+              "message": "Cloud Run error: Container failed to start. Failed to start and then listen on the port defined by the PORT environment variable. Logs for this revision might contain more information.\n\nLogs URL:\nhttps://console.cloud.google.com/logs/viewer?project=danf-cloud-run-test&resource=cloud_run_revision/service_name/gcloudruntest/revision_name/gcloudruntest-00001-dar&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22gcloudruntest%22%0Aresource.labels.revision_name%3D%22gcloudruntest-00001-dar%22",
+              "lastTransitionTime": "2022-02-03T12:41:24.378687Z"
+            },
+            {
+              "type": "RoutesReady",
+              "status": "Unknown",
+              "message": "Waiting for container to become healthy.",
+              "lastTransitionTime": "2022-02-03T12:37:22.279685Z"
+            }
+          ],
+          "latestCreatedRevisionName": "gcloudruntest-00001-dar",
+          "traffic": [
+            {
+              "revisionName": "gcloudruntest-00001-dar",
+              "percent": 100,
+              "latestRevision": true
+            }
+          ]
+        },
+        "@type": "type.googleapis.com/google.cloud.run.v1.Service"
+      }
+    },
+    "insertId": "d1odwjcm24",
+    "resource": {
+      "type": "cloud_run_revision",
+      "labels": {
+        "revision_name": "",
+        "configuration_name": "",
+        "service_name": "gcloudruntest",
+        "location": "us-central1",
+        "project_id": "danf-cloud-run-test"
+      }
+    },
+    "timestamp": "2022-02-03T12:41:24.368407Z",
+    "severity": "ERROR",
+    "logName": "projects/danf-cloud-run-test/logs/cloudaudit.googleapis.com%2Fsystem_event",
+    "receiveTimestamp": "2022-02-03T12:41:25.100847678Z"
+  }
+]
