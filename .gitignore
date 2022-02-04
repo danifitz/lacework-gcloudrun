@@ -4,6 +4,7 @@ bin/
 # Don't store any secrets my boy!
 token.key
 pushandbuild.sh
+deploy2gcprun.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

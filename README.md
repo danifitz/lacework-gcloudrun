@@ -18,6 +18,17 @@ If you want to spin up a quick demo, you can use this project
 * Open `buildandpush.sh` and replace the values for region, project, artifact repo, image name and tag.
 * Login with the gcloud CLI `gcloud auth login`
 * Make the script executable `chmod +x buildandpush.sh` and run the script `./buildandpush`
+* Deploy!
+```
+gcloud beta run deploy mytestservice \
+    --project ${YOUR_GCP_PROJECT} \
+    --image ${YOUR_GCP_REGION}-docker.pkg.dev/${GCP_PROJECT}/${ARTIFACT_REPO}/${IMAGE_NAME}:${IMAGE_TAG} \
+    --region ${YOUR_GCP_REGION} \
+    --min-instances 0 \
+    --max-instances 5 \
+    --execution-environment gen2 \
+    --port 5000
+```
 
 ## Instructions
 
