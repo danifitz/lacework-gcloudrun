@@ -14,6 +14,7 @@ If you want to spin up a quick demo, you can use this project
 * Open the GCP Console, create a new project
 * Create a new Artifact registry
 * Create a new repo in the artifact registry
+* Clone this repository `git clone https://github.com/danifitz/lacework-gcloudrun.git && cd lacework-gcloudrun`
 * Open `buildandpush.sh` and replace the values for region, project, artifact repo, image name and tag.
 * Login with the gcloud CLI `gcloud auth login`
 * Make the script executable `chmod +x buildandpush.sh` and run the script `./buildandpush`
