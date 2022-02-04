@@ -7,6 +7,17 @@ This means Google will handle managing and securing of the infrastructure includ
 
 This guide demonstrates how to gain visibility into the execution of containers running in Google Cloud Run using the Lacework agent.
 
+## Demo
+
+If you want to spin up a quick demo, you can use this project
+* [Install the gcloud CLI](https://cloud.google.com/sdk/docs/install)
+* Open the GCP Console, create a new project
+* Create a new Artifact registry
+* Create a new repo in the artifact registry
+* Open `buildandpush.sh` and replace the values for region, project, artifact repo, image name and tag.
+* Login with the gcloud CLI `gcloud auth login`
+* Make the script executable `chmod +x buildandpush.sh` and run the script `./buildandpush`
+
 ## Instructions
 
 Installation requires three steps:
