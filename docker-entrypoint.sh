@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## LW Agent (4) running the agent
+# Lacework Agent: configure and start the data collector
 /var/lib/lacework/datacollector &
 
-python app.py
+/path/to/your/existing/script

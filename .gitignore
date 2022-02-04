@@ -1,6 +1,10 @@
 # Don't check in the binaries
 bin/
 
+# Don't store any secrets my boy!
+token.key
+pushandbuild.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
