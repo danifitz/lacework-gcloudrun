@@ -1,4 +1,5 @@
 from flask import Flask
+import urllib.request
 
 app = Flask(__name__)
 
@@ -8,6 +9,8 @@ def hello_world():
 
 @app.route("/health")
 def health():
+    contents = urllib.request.urlopen("https://wikipedia.com").read()
+    print(contents)
     return "OK, Lacework!"
 
 app.run(host="0.0.0.0", port=5000)

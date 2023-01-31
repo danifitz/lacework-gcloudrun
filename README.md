@@ -127,7 +127,7 @@ docker push "${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT}/${GCP_ARTIFACT_REPO}/${
 Run the command below, replacing the details for your project, registry name, image name and tag.
 
 ```
-gcloud beta run deploy myTestService --image ${YOUR_REGION}-docker.pkg.dev/${YOUR_GCP_PROJECT}/${YOUR_REGISTRY_NAME}/${IMAGE_NAME}:${IMAGE_TAG} \
+gcloud run deploy myTestService --image ${YOUR_REGION}-docker.pkg.dev/${YOUR_GCP_PROJECT}/${YOUR_REGISTRY_NAME}/${IMAGE_NAME}:${IMAGE_TAG} \
     --min-instances 0 --max-instances 5 --execution-environment gen2
 ```
 
@@ -140,14 +140,3 @@ gcloud beta run deploy myTestService --image ${YOUR_REGION}-docker.pkg.dev/${YOU
 * In *CPU allocation and pricing* section choose *CPU is always allocated*
 * Expand the *Container, Variables & Secrets, Connections, Security* section and in the *Container* tab under *Execution environment* choose *Second generation*
 * Fill in any other necessary details to deploy your application then click the create button
-
-## Limitations
-
-* This only works with second generation environments: `metadata.annotations.run.googleapis.com/execution-environment: gen2`
-* The lacework agent must be included in the application Docker image
-* The Lacework agent requires the CPU to always be allocated in order to work.
-
-# To Do's
-
-* Test on Cloud Run for GKE Anthos
-* Test with CPU is only allocated during request processing

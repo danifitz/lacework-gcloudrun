@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # Lacework Agent: adding a build stage
-FROM lacework/datacollector:latest-sidecar AS agent-build-image
+FROM lacework/datacollector:6.3.0-sidecar AS agent-build-image
 
 FROM python:3.8
 RUN apt-get update && apt-get install -y \
